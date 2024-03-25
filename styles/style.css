@@ -1,3 +1,11 @@
+:root {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+  --main-font: Raleway;
+  --accent-font: 'STIX Two Text';
+}
+
 *,
 *::before,
 *::after {
@@ -7,6 +15,123 @@
 .page {
   min-inline-size: 360px;
   margin: 0;
+  background-color: var(--bg-color, #F3EFEC);
+  color: var(--text-color, #312A4E);
+  font-family: var(--main-font, Raleway, sans-serif);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.header {
+  padding-top: 10%;
+}
+
+.heading {
+  font-family: var(--accent-font, 'STIX Two Text', sans-serif);
+  font-weight: 600;
+  text-align: center;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  line-height: 108px;
+}
+
+.content-section {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.content__title {
+  font-size: 30px;
+  line-height: 27px;
+  margin-top: 7%;
+  margin-bottom: 2.5%;
+}
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block .content__paragraph:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.content__text-block_type_first-lettered>.content__paragraph:first-child::first-letter {
+  display: inline-block;
+  background-color: var(--accent-color, #FFAB6B);
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 1px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.content__blockquote {
+  font-style: italic;
+  line-height: 36px;
+  margin-bottom: 1.5em;
+  width: 75%;
+}
+
+.content__blockquote p::before {
+  content: "«";
+}
+
+.content__blockquote p::after {
+  content: "».";
+}
+
+.content__link {
+  color: currentColor;
+}
+
+.content__list {
+  list-style-type: none;
+  padding-inline-start: 40px;
+}
+
+.content__list-item {
+  position: relative;
+}
+
+.content__list-item::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/marker-light.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -25px;
+  top: 3px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.content__figure {
+  margin-block: 7%;
+  width: calc(100% + (5vw + 5vw));
+  position: relative;
+  left: -5vw;
+}
+
+.content__picture img {
+  width: 100%;
+}
+
+.content__picture-caption {
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  border-bottom: 1px solid var(--text-color, #312A4E);
+  padding-block: 20px;
 }
 
 p,
