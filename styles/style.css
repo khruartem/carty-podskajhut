@@ -134,6 +134,42 @@
   padding-block: 20px;
 }
 
+.content__card {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--text-color, #312A4E);
+}
+
+.content__card-title {
+  font-size: 60px;
+  line-height: 90%;
+}
+
+.colored-text {
+  position: relative;
+}
+
+.colored-text::before {
+  content: "";
+  display: inline-block;
+  width: calc(100% + 3.5%);
+  height: 1rem;
+  position: absolute;
+  background-color: var(--accent-color, #FFAB6B);
+  z-index: -1;
+  bottom: 19%;
+  left: -1%;
+}
+
+.content__card-subtitle {
+  font-size: 18px;
+  text-align: center;
+}
+
 p,
 h1,
 h2,
